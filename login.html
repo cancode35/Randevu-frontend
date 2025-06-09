@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - Hastane Randevu Sistemi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Hastane Randevu Sistemi</a>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" class="active">Giriş Yap</a>
+                <a href="register.html">Kayıt Ol</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Giriş Yap</h2>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="userType">Kullanıcı Tipi:</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Seçiniz</option>
+                        <option value="patient">Hasta</option>
+                        <option value="doctor">Doktor</option>
+                    </select>
+                </div>
+                <button type="button" onclick="handleLogin()" class="btn">Giriş Yap</button>
+            </form>
+            <p class="form-footer">
+                Hesabınız yok mu? <a href="register.html">Kayıt Olun</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hastane Randevu Sistemi - Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        function handleLogin() {
+            const email = document.getElementById('email').value;
+            const userType = document.getElementById('userType').value;
+
+            // Örnek doktor e-posta kontrolü
+            const doctorEmails = {
+                'semih.tuzun@hastane.com': 'doctor-dashboard.html',
+                'samet.korkmaz@hastane.com': 'doctor-dashboard-samet.html',
+                'ibrahim.sevkli@hastane.com': 'doctor-dashboard-ibrahim.html',
+                'elif.gungordu@hastane.com': 'doctor-dashboard-elif.html'
+            };
+
+            if (userType === 'doctor') {
+                // Doktor girişi
+                if (doctorEmails[email]) {
+                    window.location.href = doctorEmails[email];
+                } else {
+                    alert('Geçersiz doktor e-postası!');
+                }
+            } else if (userType === 'patient') {
+                // Hasta girişi
+                window.location.href = 'patient-dashboard.html';
+            } else {
+                alert('Lütfen kullanıcı tipini seçin!');
+            }
+        }
+    </script>
+</body>
+</html> 
