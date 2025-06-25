@@ -1,4 +1,4 @@
-# Randevu-ný-z
+# Randevu-frontend
 
 Bu proje bir hastane randevu ve yönetim sistemidir. Kullanıcılar (hastalar ve doktorlar) sisteme giriş yapabilir, randevu alabilir ve yönetebilirler.
 
@@ -22,8 +22,3 @@ Bu proje bir hastane randevu ve yönetim sistemidir. Kullanıcılar (hastalar ve
    ```
 3. `index.html` dosyasını bir tarayıcıda açarak projeyi görüntüleyebilirsiniz.
 
-## Katkı Sağlama
-Katkıda bulunmak için lütfen bir fork oluşturun ve pull request gönderin.
-
-## Lisans
-Bu proje MIT lisansı ile lisanslanmıştır. 
